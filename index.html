@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marco Gotell - Página Personal</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .section-title {
+            font-size: 2em;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 1em;
+        }
+        .contact-info a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        .slider {
+            position: relative;
+            max-width: 100%;
+            margin: 2em auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .slides {
+            display: flex;
+            transition: transform 1s ease-in-out;
+            width: 100%;
+        }
+        .slides img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Marco Gotell</h1>
+        <p>Bienvenido a mi página personal. Soy Marco Gotell y estoy entusiasmado de compartir mis intereses y pasiones contigo.</p>
+        
+        <div class="intereses">
+            <h2 class="section-title">Mis Intereses</h2>
+            <p>Me apasiona la tecnología, el desarrollo web, la inteligencia artificial y la robótica. También disfruto del senderismo, la fotografía y aprender nuevos idiomas.</p>
+        </div>
+
+        <div class="slider">
+            <div class="slides">
+                <img src="tu_imagen1.jpg" alt="Trabajo 1">
+                <img src="tu_imagen2.jpg" alt="Trabajo 2">
+                <img src="tu_imagen3.jpg" alt="Trabajo 3">
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h2 class="section-title">Contacto</h2>
+            <p>Puedes ponerte en contacto conmigo a través de las siguientes plataformas:</p>
+            <a href="mailto:tu_correo@example.com">Envíame un correo</a>
+            <br>
+            <a href="https://linkedin.com/in/tu_perfil" target="_blank">LinkedIn</a>
+            <br>
+            <a href="https://twitter.com/tu_usuario" target="_blank">Twitter</a>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const images = document.querySelectorAll('.slides img');
+        let index = 0;
+
+        function showSlide(index) {
+            const offset = -index * 100;
+            slides.style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            index = (index < images.length - 1) ? index + 1 : 0;
+            showSlide(index);
+        }
+
+        setInterval(nextSlide, 3000); // Cambia de imagen cada 3 segundos
+    </script>
+</body>
+</html>
